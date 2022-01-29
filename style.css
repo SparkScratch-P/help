@@ -1,0 +1,53 @@
+img {
+  vertical-align: middle;
+}
+
+.graph {
+  border: 5px solid;
+  border-radius: 10px;
+  padding: 5px;
+  border-color: grey;
+  max-width: 500px;
+}
+
+table {
+  color: white;
+  width: 97%;
+  margin-left: auto;
+  margin-right: auto;
+  border: thin;
+  border-style: solid;
+  border-collapse: collapse;
+  background-color: black;
+}
+
+.inner{
+  width: 100%;
+  text-align: left;
+} 
+
+.bar {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: auto;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.right {
+  float: right;
+  width: 33%; 
+  text-align: center;
+}
+
+.left {
+  float: left;
+  width: 33%;
+}
+
+.middle {
+  width: 33%;
+  text-align: center;
+}
