@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twilight club progress tracker</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body bgcolor = "black" link="#0091ff" alink="#0091ff" vlink="#0091ff">
+    <!--<style src="templates/indexstyle.css"></style> -->
+    <font color = "white">
+    <h1 class="title">
+     <center><img src="https://cdn.brawlify.com/club/{{club_info.badgeId}}.png" width = 6% align = "center"> <span>TWILIGHT CLUB</span></center>
+    </h1>
+    <hr size = 6 noshade>
+      <marquee>
+        <font color ="red">Website is under construction.</font>
+      </marquee>
+     <hr size = 6 noshade>
+      <h2 class= "header"><u>Data:</u> <small>(Last updated: {{club_data["updated"]["data"]}})</small></h2>
+    <center><img src="https://share.brawlify.com/club-graph/2QJPRPR9R" width="70%" class="graph"></center><br>
+      <div style="overflow-x:auto;">
+    <table border="1">
+      <tr>
+    <th>Page loaded:</th><td> {{club_data["curr_time"]}}</td>
+      </tr>
+      <tr>
+    <th>Club tag:</th><td> {{club_data["tag"]}}</td>
+      </tr>
+      <tr>
+    <th>Club name:</th><td> {{club_data["name"]}}</td>
+      </tr>
+      <tr>
+    <th>Club type:</th><td> {{club_info["type"]}}</td>
+      </tr>
+      <tr>
+    <th>President:</th><td> {{club_info["president"]["name"]}} (tag: {{club_info["president"]["tag"]}})</td>
+      </tr>
+      <tr>
+    <th>Club trophies:</th><td> {{club_data["trophies"]}}</td>
+      </tr>
+      <tr>
+    <th>Required to join:</th><td>{{club_data["requiredTrophies"]}}</td>
+      </tr>
+     <tr>
+    <th>Average trophies:</th><td> {{club_data["trophies"]//club_data["memberCount"]}}</td>
+     </tr>
+      <tr>
+    <th>Members:</th><td> {{club_data["memberCount"]}}/30</td>
+      </tr>
+      <tr>
+    <th>Role distributon:</th>
+<td>
+  <table border=1 class="inner">  <tr>
+      <th>President:</th>
+      <td>{{club_info["count"]["pres"]}}</td>
+    </tr>
+
+    <tr>
+      <th>Vice president:</th>
+      <td>{{club_info["count"]["vice"]}}</td>
+    </tr>
+
+    <tr>
+      <th>Senior:</th>
+      <td>{{club_info["count"]["senior"]}}</td>
+    </tr>
+
+    <tr>
+      <th>Member:</th>
+      <td>{{club_info["count"]["member"]}}</td>
+    </tr>
+
+  </table>
+</td> 
+</tr>
+      <tr>
+    <th>Club desc:</th><td> {{club_data["description"]}}</td>
+      </tr>
+    </table>
+      </div>
