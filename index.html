@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twilight club progress tracker</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="static/style.css" rel="stylesheet">
   </head>
   <body bgcolor = "black" link="#0091ff" alink="#0091ff" vlink="#0091ff">
     <!--<style src="templates/indexstyle.css"></style> -->
@@ -78,5 +78,32 @@
       </tr>
     </table>
       </div>
-      
-    </font></body></html>
+    <br>
+    <hr size = 4 noshade>
+      <h2 class = "header"><u>Members:</u> <small>(Last updated: {{updated}})</small></h2>
+      {% for item in club_info["members"] %}
+      <div class="bar" style="background-color: grey; text-align:left">
+        <img src = "https://cdn.brawlify.com/profile/{{item.icon.id}}.png" width = "10%" align = "left">
+        <b><a style = {{"color:#" + item.nameColor[4:]+ ";text-decoration:none;"}} href = {{"https://brawlify.com/stats/profile/"+item.tag[1:]}}>{{item.name}}</a></b> <i>({{item.tag}})</i><br>
+        
+        <span class="left">Role: {{item.role}}</span>
+        <span class="middle">{{duration[item.tag]["time"]}}</span>
+        <span class="right"><img src="https://cdn.brawlify.com/icon/trophy.png" width = "12%"><big>{{item.trophies}}</big></span>
+      </div>
+      <div style="clear: both;"></div>
+      {% endfor %}
+    <hr size = 4 noshade>
+      <h2 class="header"><u>History:</u> <small>(Last updated: {{club_data["updated"]["history"]}})</small></h2>
+
+    {% for item in club_logs %}
+      <div class="bar" style="background-color: {{item.color}}">
+      {{item["show"]|safe}} <!-- |safe says Html to run any tags in it -->
+      </div>
+    {% endfor %}
+      <br>
+    <hr size = 8 noshade><br>
+    Data last requested: {{updated}}<br>
+    Data provided by <a href="https://brawlify.com">brawlify.com</a> through their <a href="https://brawlapi.com">API.</a>
+      </font>
+  </body>
+</html>
